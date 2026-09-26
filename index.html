@@ -1,0 +1,110 @@
+HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Budget Tracker</title>
+  
+  <!-- Google Fonts: Poppins (Headings) & Inter (Body Text) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Card 1: Page Header -->
+  <header class="card header-card">
+    <h1>Personal Budget Tracker</h1>
+    <p>Track your daily income, manage expenses, and maintain financial clarity.</p>
+  </header>
+
+  <main class="container">
+    <!-- Card 2: Add Expense Form -->
+    <section class="card form-card">
+      <h2>Add New Expense</h2>
+      <form id="expense-form">
+        <div class="form-group">
+          <label for="description">Expense Description</label>
+          <input type="text" id="description" name="description" placeholder="e.g., Grocery Shopping" required>
+        </div>
+
+        <div class="form-group">
+          <label for="category">Category</label>
+          <select id="category" name="category" required>
+            <option value="" disabled selected>Select Category</option>
+            <option value="Food">Food & Dining</option>
+            <option value="Utilities">Utilities & Bills</option>
+            <option value="Entertainment">Entertainment</option>
+            <option value="Transport">Transportation</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="amount">Amount ($)</label>
+          <input type="number" id="amount" name="amount" placeholder="0.00" step="0.01" required>
+        </div>
+
+        <div class="form-group">
+          <label for="date">Date</label>
+          <input type="date" id="date" name="date" required>
+        </div>
+
+        <button type="submit" class="btn-primary">Add Expense</button>
+      </form>
+    </section>
+
+    <!-- Card 3: Expense Table -->
+    <section class="card table-card">
+      <h2>Expense Details</h2>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Description</th>
+              <th>Category</th>
+              <th>Amount ($)</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2026-03-20</td>
+              <td>Supermarket Groceries</td>
+              <td><span class="badge badge-food">Food</span></td>
+              <td class="amount">$120.50</td>
+              <td><button class="btn-delete">Delete</button></td>
+            </tr>
+            <tr>
+              <td>2026-03-21</td>
+              <td>Electricity Bill</td>
+              <td><span class="badge badge-utilities">Utilities</span></td>
+              <td class="amount">$75.00</td>
+              <td><button class="btn-delete">Delete</button></td>
+            </tr>
+            <tr>
+              <td>2026-03-22</td>
+              <td>Movie Night</td>
+              <td><span class="badge badge-entertainment">Entertainment</span></td>
+              <td class="amount">$30.00</td>
+              <td><button class="btn-delete">Delete</button></td>
+            </tr>
+            <tr>
+              <td>2026-03-23</td>
+              <td>Bus Pass</td>
+              <td><span class="badge badge-transport">Transport</span></td>
+              <td class="amount">$45.00</td>
+              <td><button class="btn-delete">Delete</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>

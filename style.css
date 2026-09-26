@@ -1,0 +1,143 @@
+CSS
+/* ==========================================================================
+   1. COLOR PALETTE & GLOBAL VARIABLES
+   ========================================================================== */
+:root {
+  /* Brand Palette */
+  --primary-color: #1e293b;       /* Deep Slate Blue */
+  --accent-color: #059669;        /* Emerald Green */
+  --accent-hover: #047857;        /* Darker Emerald */
+  --bg-color: #f8fafc;            /* Off-White Background */
+  --card-bg: #ffffff;             /* Crisp White Card Background */
+  
+  /* Text Colors */
+  --text-main: #0f172a;           /* Near Black for High Contrast */
+  --text-muted: #64748b;          /* Muted Gray for Subheadings & Labels */
+  
+  /* UI & Borders */
+  --border-color: #e2e8f0;        /* Subtle Border Gray */
+  --danger-color: #e11d48;        /* Soft Crimson for Delete */
+  --danger-hover: #be123c;
+  
+  /* Typography */
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  
+  /* Shadows & Radius */
+  --radius: 12px;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* ==========================================================================
+   2. BASE RESET & BODY STYLES
+   ========================================================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  padding: 2rem 1rem;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Typography Hierarchy */
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  color: var(--primary-color);
+  line-height: 1.25;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+h2 {
+  font-size: 1.35rem;
+  margin-bottom: 1.25rem;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 0.5rem;
+}
+
+/* ==========================================================================
+   3. BOX MODEL & CARD COMPONENT LAYOUTS
+   ========================================================================== */
+.card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.75rem;
+  margin-bottom: 2rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header-card {
+  text-align: center;
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  color: #ffffff;
+  border: none;
+}
+
+.header-card h1 {
+  color: #ffffff;
+}
+
+.header-card p {
+  color: #94a3b8;
+  font-size: 0.95rem;
+}
+
+/* ==========================================================================
+   4. FORM STYLING
+   ========================================================================== */
+#expense-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 0.35rem;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+select {
+  padding: 0.65rem 0.85rem;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  background-color: #ffffff;
+  color: var(--text-main);
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus,
+select:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.15);
+}
